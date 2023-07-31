@@ -1,0 +1,31 @@
+#include <iostream>
+
+using namespace std;
+int main()
+
+{
+
+    // In Bubble sort j travels and we compare arr[j] and arr[j+1], and the smaller one is swap with bigger one
+
+    int arr[6] = {64, 6, 11, 67, 9, 0};
+    int size = 6;
+    for (int i = 0; i < size; i++)
+    {
+        for (int j = 0; j < size; j++)
+        {
+            if (arr[j] > arr[j + 1])
+            {
+                swap(arr[j], arr[j + 1]);
+            }
+        }
+    }
+
+    cout << "The Array is: " << endl;
+
+    for (int i = 0; i < size; i++)
+    {
+        cout << arr[i] << ",";
+    }
+
+    return 0;
+}

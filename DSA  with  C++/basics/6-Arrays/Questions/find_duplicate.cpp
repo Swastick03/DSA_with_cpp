@@ -1,0 +1,24 @@
+// //Given an array of integers nums containing n + 1 integers where each integer is in the range [1, n] inclusive.
+
+// There is only one repeated number in nums, return this repeated number.
+
+// You must solve the problem without modifying the array nums and uses only constant extra space.
+
+class Solution
+{
+public:
+    int findDuplicate(vector<int> &nums)
+    {
+        int ans = 0;
+        int size = nums.size();
+        for (int i = 0; i < size; i++)
+        {
+            ans = ans ^ nums[i];
+        }
+        for (int j = 1; j < size; j++)
+        {
+            ans = ans ^ j;
+        }
+        return ans;
+    }
+};
