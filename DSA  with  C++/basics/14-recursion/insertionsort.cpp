@@ -20,7 +20,7 @@ int main()
 
 {
 
-    int arr[6] = {2, 9, 1, 6, 3, 7};
+    int arr[6] = {2, 9, 1, 6, 3, 0};
     sort(arr, 6);
     cout << "After Insertion sort: " << endl;
     for (int i = 0; i < 6; i++)
