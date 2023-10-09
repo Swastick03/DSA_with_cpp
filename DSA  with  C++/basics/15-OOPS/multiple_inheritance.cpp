@@ -1,6 +1,7 @@
 #include <iostream>
 
 using namespace std;
+
 class Animal
 {
 public:
@@ -11,22 +12,37 @@ public:
     {
         cout << "Speaking" << endl;
     }
-};
-
-class Dog : public Animal
-{
-public:
-    void speak()
+    void bark()
     {
-        cout << "Speaking Not" << endl; // method overriding
+        cout << "Barking 1" << endl;
     }
 };
+
+class Dome
+{
+public:
+    int sum;
+
+    void bark()
+    {
+        cout << "Barking 2" << endl;
+    }
+};
+
+class Labro : public Animal, public Dome
+{
+};
+
 int main()
 
 {
 
-    Dog l;
+    Labro l;
     l.speak();
+    l.Dome::bark();
+
     cout << l.age << endl;
+    cout << l.sum << endl;
+
     return 0;
 }
