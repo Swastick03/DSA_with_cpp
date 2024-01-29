@@ -29,5 +29,12 @@ int main()
 
     cout << "Health is: " << h1.gethealth() << endl;
     cout << "Level is: " << h1.level << endl;
+    Hero h2;
+    // cout << "Health is: " << h1.health << endl;
+    cout << "Setting health " << endl;
+    h2.sethealth(7);
+
+    cout << "Health is: " << h2.gethealth() << endl;
+    cout << "Level is: " << h2.level << endl;
     return 0;
 }

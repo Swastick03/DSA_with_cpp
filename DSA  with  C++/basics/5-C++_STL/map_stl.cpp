@@ -18,11 +18,13 @@ int main()
         cout << i.first << "  " << i.second << endl;
     }
 
-    m.erase(5);
-    for (auto i : m)
-    {
-        cout << i.first << "  " << i.second << endl;
-    }
+    cout << m.count(8); // 1 - if present      0- if absent
+
+    // m.erase(5);
+    // for (auto i : m)
+    // {
+    //     cout << i.first << "  " << i.second << endl;
+    // }
 
     return 0;
 }
