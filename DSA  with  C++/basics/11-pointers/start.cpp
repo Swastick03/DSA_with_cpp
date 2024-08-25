@@ -30,6 +30,9 @@ int main()
 
     int b = 5;
     int c = b;
+
+    cout << "B ks address: " << &b << endl;
+    cout << "C ka address" << &c << endl;
     cout << "The value of b before:" << b << endl;
     c++;
     cout << "The value of b after:" << b << endl;

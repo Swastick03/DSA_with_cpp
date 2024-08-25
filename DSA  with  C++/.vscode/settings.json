@@ -4,6 +4,11 @@
     "*.ejs": "html",
     "iostream": "cpp",
     "algorithm": "cpp",
-    "ostream": "cpp"
+    "ostream": "cpp",
+    "array": "cpp",
+    "string_view": "cpp",
+    "initializer_list": "cpp",
+    "ranges": "cpp",
+    "utility": "cpp"
   }
 }
