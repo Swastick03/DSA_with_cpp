@@ -1,6 +1,16 @@
 #include <iostream>
 
 using namespace std;
+void print(int arr[], int size)
+{
+    cout << "The Array is: " << endl;
+
+    for (int i = 0; i < size; i++)
+    {
+        cout << arr[i] << ",";
+    }
+    cout << endl;
+}
 int main()
 
 {
@@ -9,27 +19,18 @@ int main()
 
     int arr[6] = {64, 6, 11, 67, 9, 0};
     int size = 6;
-    for (int i = 0; i < size - 1; i++)
-    {
-        int min_index = i;
-        for (int j = i + 1; j < size; j++)
-        {
-            if (arr[j] < arr[min_index])
-            {
-                min_index = j;
-            }
-        }
-        if (min_index != i)
-        {
-            swap(arr[i], arr[min_index]);
-        }
-    }
-
-    cout << "The Array is: " << endl;
-
     for (int i = 0; i < size; i++)
     {
-        cout << arr[i] << ",";
+        int temp = i;
+        for (int j = i + 1; j < size; j++)
+        {
+            if (arr[j] < arr[temp])
+            {
+                temp = j;
+            }
+        }
+        swap(arr[i], arr[temp]);
+        print(arr, size);
     }
 
     return 0;

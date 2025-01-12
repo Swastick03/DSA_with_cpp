@@ -1,6 +1,16 @@
 #include <iostream>
 
 using namespace std;
+void print(int arr[], int size)
+{
+    cout << "The Array is: " << endl;
+
+    for (int i = 0; i < size; i++)
+    {
+        cout << arr[i] << ",";
+    }
+    cout << endl;
+}
 int main()
 
 {
@@ -18,13 +28,7 @@ int main()
                 swap(arr[j], arr[j + 1]);
             }
         }
-    }
-
-    cout << "The Array is: " << endl;
-
-    for (int i = 0; i < size; i++)
-    {
-        cout << arr[i] << ",";
+        print(arr, size);
     }
 
     return 0;

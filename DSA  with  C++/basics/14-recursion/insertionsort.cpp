@@ -5,16 +5,16 @@ void sort(int arr[], int n)
 {
     if (n == 0 || n == 1)
         return;
-
     sort(arr, n - 1);
     int temp = arr[n - 1];
-    int j = n - 2;
-    while (j >= 0 && arr[j] > temp)
+
+    int i = n - 2;
+    while (i >= 0 && arr[i] > temp)
     {
-        arr[j + 1] = arr[j];
-        j--;
+        arr[i + 1] = arr[i];
+        arr[i] = temp;
+        i--;
     }
-    arr[j + 1] = temp;
 }
 int main()
 

@@ -14,7 +14,7 @@ void sort(int *arr, int n)
             swap(arr[i], arr[i + 1]);
         }
     }
-    sort(arr, n - 1);
+    return sort(arr, n - 1);
 }
 int main()
 

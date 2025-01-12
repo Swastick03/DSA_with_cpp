@@ -1,7 +1,49 @@
 #include <iostream>
 
 using namespace std;
+
 void merge(int *arr, int s, int e)
+{
+    int mid = s + (e - s) / 2;
+    int len1 = mid - s + 1;
+    int len2 = e - mid;
+
+    int a[len1], b[len2];
+    int index = s;
+    for (int i = 0; i < len1; i++)
+    {
+        a[i] = arr[index++];
+    }
+    for (int i = 0; i < len2; i++)
+    {
+        b[i] = arr[index++];
+    }
+
+    index = s;
+    int i = 0, j = 0;
+    while (i < len1 && j < len2)
+    {
+        if (a[i] < b[j])
+        {
+            arr[index++] = a[i++];
+        }
+        else
+        {
+            arr[index++] = b[j++];
+        }
+    }
+
+    while (i < len1)
+    {
+        arr[index++] = a[i++];
+    }
+    while (j < len2)
+    {
+        arr[index++] = b[j++];
+    }
+}
+
+void mergee(int *arr, int s, int e)
 {
     int mid = s + (e - s) / 2;
     int len1 = mid - s + 1;
@@ -46,18 +88,12 @@ void merge(int *arr, int s, int e)
 }
 void mergesort(int *arr, int s, int e)
 {
-    // base case
     if (s >= e)
         return;
 
     int mid = s + (e - s) / 2;
-
-    // for left part
     mergesort(arr, s, mid);
-
-    // for right part
     mergesort(arr, mid + 1, e);
-
     merge(arr, s, e);
 }
 int main()

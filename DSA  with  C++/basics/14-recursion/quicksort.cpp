@@ -4,6 +4,34 @@ using namespace std;
 int partition(int arr[], int s, int e)
 {
     int pivot = arr[s];
+    int count = 0;
+    for (int i = s + 1; i <= e; i++)
+    {
+        if (arr[i] < pivot)
+            count++;
+    }
+
+    swap(arr[s], arr[s + count]);
+
+    int i = s, j = e;
+    int p = s + count;
+
+    while (i < p && j > p)
+    {
+        while (arr[i] <= pivot)
+            i++;
+        while (arr[j] > pivot)
+            j--;
+        if (i < p && j > p)
+        {
+            swap(arr[i++], arr[j--]);
+        }
+    }
+    return p;
+}
+int partitionn(int arr[], int s, int e)
+{
+    int pivot = arr[s];
 
     int count = 0;
     for (int i = s + 1; i <= e; i++)
